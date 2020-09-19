@@ -3,4 +3,8 @@
   "editor.tabSize": 2,
   "jest.showCoverageOnLoad": true,
   "cmake.configureOnOpen": false,
+  "cSpell.words": [
+    "BGLTF",
+    "GLTF"
+  ],
 }
