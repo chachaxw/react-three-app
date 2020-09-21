@@ -33,7 +33,7 @@ const Asset: FunctionComponent<Props> = (props) => {
     if (group.current && animations.length) {
       mixer.clipAction(animations[0], group.current).play();
     }
-  }, []);
+  }, [animations, mixer]);
   useFrame((state: any, delta: number) => {
     if (group.current) {
       group.current.position.x = lerp(group.current.position.x, mouse.current[0] / aspect / 10, 0.1);

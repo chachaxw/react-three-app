@@ -3,7 +3,7 @@ import { Canvas } from 'react-three-fiber';
 import { ControlsProvider, Controls } from 'react-three-gui';
 
 import './App.css';
-import { Asset, Mesh, OrbitControl, Stars } from './components';
+import { Mesh, Rect, OrbitControl } from './components';
 
 const App: FunctionComponent<any> = (props) => {
   const mouse = useRef<[number, number]>([0, 0]);
@@ -15,15 +15,18 @@ const App: FunctionComponent<any> = (props) => {
     <div className="App">
       <ControlsProvider>
         <Canvas style={{ height: '100vh' }} onMouseMove={onMouseMove}>
-          <ambientLight intensity={1} />
-          <pointLight intensity={20} position={[10, 10, 10]} color="#200f20" />
+          <ambientLight intensity={0.5} />
+          <pointLight intensity={5} position={[10, 10, 10]} color="#171720" />
           <Suspense fallback={<Mesh />}>
-            <Asset mouse={mouse} url="models/dragon_glass/scene.gltf" />
+            {/* <group rotation-x={rotationX} rotation-y={rotationY} rotation-z={rotationZ}>
+              <Rect url="assets/images/12f.png" positionZ={0} />
+              <Rect url="assets/images/11f.png" positionZ={0.2} />
+              <Rect url="assets/images/13f.png" positionZ={0.4} />
+            </group> */}
           </Suspense>
-          <Stars count={1000} />
           <fog attach="fog" args={['#090b1f', 0, 25]} />
+          <axesHelper args={[5]} />
           <OrbitControl
-            autoRotate
             enableZoom
             enableDamping
             rotateSpeed={1}
