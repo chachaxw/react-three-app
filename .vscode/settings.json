@@ -5,6 +5,7 @@
   "cmake.configureOnOpen": false,
   "cSpell.words": [
     "BGLTF",
-    "GLTF"
+    "GLTF",
+    "lerp"
   ],
 }
