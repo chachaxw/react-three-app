@@ -8,7 +8,7 @@ interface Props {
 const Stars: FunctionComponent<Props> = (props) => {
   const { count } = props;
   const mesh = useRef<THREE.Mesh>();
-  const positions = useMemo(() => {
+  const positions = useMemo<Float32Array>(() => {
     let positions = [];
 
     for (let i = 0; i < count; i++) {
