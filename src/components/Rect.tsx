@@ -12,7 +12,7 @@ const Rect: FunctionComponent<Props> = (props) => {
   const texture = useLoader<Texture>(TextureLoader, url);
 
   return (
-    <mesh castShadow receiveShadow rotation={[40, 0, 0]} position={[0, 0, positionZ]}>
+    <mesh castShadow receiveShadow rotation={[0, 0, 0]} position={[0, 0, 0]}>
       <planeGeometry attach="geometry" args={[1, 1]} />
       <meshStandardMaterial attach="material" map={texture} side={DoubleSide} opacity={0.8} />
     </mesh>
